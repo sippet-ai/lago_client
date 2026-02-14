@@ -1,5 +1,7 @@
 # LagoClient
 
+[![Hex.pm](https://img.shields.io/hexpm/v/lago_client.svg)](https://hex.pm/packages/lago_client)
+
 Elixir client for the Lago API generated from Lago's OpenAPI spec.
 
 ## Installation
