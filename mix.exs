@@ -11,7 +11,7 @@ defmodule LagoClient.MixProject do
       aliases: aliases(),
       description: description(),
       package: package(),
-      source_url: "https://github.com/al/lago_client"
+      source_url: "https://github.com/sippet-ai/lago_client"
     ]
   end
 
@@ -48,7 +48,7 @@ defmodule LagoClient.MixProject do
     [
       licenses: ["AGPL-3.0-only"],
       links: %{
-        "GitHub" => "https://github.com/YOUR_GH/lago_client",
+        "GitHub" => "https://github.com/sippet-ai/lago_client",
         "Lago OpenAPI" => "https://github.com/getlago/lago-openapi",
         "Lago Swagger" => "https://swagger.getlago.com/"
       }
