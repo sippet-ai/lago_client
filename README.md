@@ -1,21 +1,42 @@
 # LagoClient
 
-**TODO: Add description**
+Elixir client for the Lago API generated from Lago's OpenAPI spec.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `lago_client` to your list of dependencies in `mix.exs`:
+Add `lago_client` to your dependencies:
 
 ```elixir
 def deps do
   [
-    {:lago_client, "~> 0.1.0"}
+    {:lago_client, "~> 1.0.0"}
   ]
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/lago_client>.
+## Generate From OpenAPI
 
+Fetch the latest Lago OpenAPI file and regenerate the client:
+
+```bash
+mix api.lago.gen
+```
+
+This command:
+
+1. Downloads `https://swagger.getlago.com/openapi.yaml` into `priv/openapi/lago.yaml`
+2. Runs `mix api.gen lago priv/openapi/lago.yaml`
+3. Outputs generated modules under `Lago.*` in `lib/lago/`
+
+## Usage
+
+```elixir
+# Configure once (config/runtime.exs, env vars, etc.)
+config :lago_client, :api_key, System.fetch_env!("LAGO_API_KEY")
+
+# Use generated operations:
+Lago.Customers.create_customer(
+  %{customer: %{external_id: "cust_123", name: "ACME"}},
+  []
+)
+```
